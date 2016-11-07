@@ -1,0 +1,16 @@
+set nocompatible
+set showmatch
+set incsearch
+set hlsearch
+set bg=dark
+syntax enable
+colo monokain
+set tabstop=3
+set shiftwidth=3
+set softtabstop=3
+set expandtab
+set autoindent
+set cindent
+map r mzgg=G`x<CR>
+map <Esc>[B <Down>]
+au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
