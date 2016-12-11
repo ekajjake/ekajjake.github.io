@@ -1,0 +1,27 @@
+<html>
+<head>
+   <script src="https://d3js.org/d3.v4.min.js"></script>
+   <script async src="main.js"></script>
+   <title>mountains!</title>
+</head>
+<body style="font-family: Trebuchet MS;">
+   <div style="font-size: 16px">
+      Mess around generating mountains!
+   </div>
+   <div id="mountain" style="padding-top: 10%; padding-right: 20%;">
+   </div>
+   <button onclick="regenerate()">REGENERATE</button>
+   <br>
+   smoothness:
+   <input id="smoothness" type="number" onchange="changeSmooth(this.value)"/>
+   <br>
+   steps:
+   <input id="steps" type="number" onchange="changeSteps(this.value)"/>
+   <br>
+   height influence:
+   <input id="heightInfluence" type="number" onchange="changeHI(this.value)"/>
+   <div style="font-size: 10px;">
+      Inspired by Scott Turner's blog post <a href="https://heredragonsabound.blogspot.com/2016/12/the-shape-of-things-to-come.html">here</a>
+   </div>
+</body>
+</html>
