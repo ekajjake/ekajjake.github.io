@@ -1,0 +1,35 @@
+<html>
+   <head>
+      <title>A.E.S. Synthesis Workshop</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>
+      <script>
+         function getMdFile(url, doneCallback) {
+             var xhr;
+
+             xhr = new XMLHttpRequest();
+             xhr.onreadystatechange = handleStateChange;
+             xhr.open("GET", url, true);
+             xhr.send();
+             function handleStateChange() {
+                 if (xhr.readyState === 4) {
+                     doneCallback(xhr.status == 200 ? xhr.responseText : null);
+                 }
+             }
+         }
+      </script>
+      <script>
+         var converter = new showdown.Converter();
+         converter.setFlavor('github');
+         getMdFile('ideas.md', function(resp) {
+            if (resp != null) {
+               document.getElementById('md')
+                  .innerHTML = converter.makeHtml(resp);
+            }
+         });
+      </script>
+   </head>
+   <body style="font-family: Trebuchet MS;">
+      <div id='md'>
+      </div>
+   </body>
+</html>
